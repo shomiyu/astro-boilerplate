@@ -1,20 +1,45 @@
-# Astro Starter Kit: Basics
+# Astro Boilerplate
 
-```sh
-npm create astro@latest -- --template basics
+## 🚀 Setup
+
+> モジュールインストール
+
+```zsh
+$ npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 📚 microCMS との接続
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🍡 Fonts Install
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+フォントのインストールは [Fontsource](https://fontsource.org/)から npm でインストールして使用する。
 
-## 🚀 Project Structure
+> フォントをインストール
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
+# Noto Sans JP
+$ npm install @fontsource-variable/noto-sans-jp
+
+# Noto Serif JP
+$ npm install @fontsource/noto-serif-jp
+```
+
+> Layout ファイルで import
+
+```jsx
+// Supports weights 100-900
+import "@fontsource-variable/noto-sans-jp";
+```
+
+> CSS で読み込み
+
+```css
+body {
+  font-family: "Noto Sans JP Variable", sans-serif;
+}
+```
+
+## 🍖 Files
 
 ```text
 /
@@ -30,12 +55,6 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -48,7 +67,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
