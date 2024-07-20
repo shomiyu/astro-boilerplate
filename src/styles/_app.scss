@@ -1,0 +1,73 @@
+@use "sass:math";
+@use "sass:map";
+
+//============================================
+//  SETTINGS
+//============================================
+
+// Breack Points
+//--------------------------------------------
+$breakpoints: (
+  "sp": 480px,
+  "tab": 768px,
+  "lap": 1024px,
+  "desk": 1200px,
+) !default;
+
+// Color Setings
+//--------------------------------------------
+:root {
+  // color style
+  --color-text-main: #000;
+  --color-text-light: #fff;
+  --color-bg-white: #fff;
+  --color-border-main: #ddd;
+
+  // font
+  --font-base: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", YuGothic,
+    "Yu Gothic", sans-serif;
+}
+
+//============================================
+//  FUNCTIONS
+//============================================
+
+// -------------------------------------------
+//  引数のfontSizeをremに変換する関数
+//  @param fontSize フォントサイズ
+// -------------------------------------------
+@function fz($fontSize) {
+  @return math.div($fontSize, 16) * 1rem;
+}
+
+// -------------------------------------------
+//  引数のfontSizeを元に指定されたpx数をemに変換する関数
+//  @param px 変換するpx数
+//  @param fontSize フォントサイズ
+// -------------------------------------------
+@function em($px, $fontSize: 16) {
+  @return math.div($px, $fontSize) * 1em;
+}
+
+//============================================
+//  MIXIN
+//============================================
+
+// -------------------------------------------
+// Media Queries
+//--------------------------------------------
+@mixin mq($breakpoint: tab, $type: min) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @if ($type == max) {
+      $width: map.get($breakpoints, $breakpoint);
+      $width: $width - 1;
+      @media screen and (max-width: #{$width}) {
+        @content;
+      }
+    } @else if($type == min) {
+      @media screen and (min-width: #{map.get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
+  }
+}

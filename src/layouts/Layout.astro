@@ -1,20 +1,22 @@
 ---
 import "ress";
 import "@fontsource-variable/noto-sans-jp";
+import "../styles/global/base.scss";
+import "../styles/utility/visually-hidden.scss";
+import "../styles/utility/margin.scss";
 interface Props {
   title: string;
   test: string;
 }
 
 const { title, test } = Astro.props;
-
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content="Astro description" />
     <meta name="generator" content={Astro.generator} />
@@ -25,9 +27,3 @@ const { title, test } = Astro.props;
     <slot />
   </body>
 </html>
-
-<style is:global>
-body {
-  font-family: "Noto Sans JP Variable", sans-serif;
-}
-</style>

@@ -10,6 +10,8 @@ $ npm install
 
 ## 📚 microCMS との接続
 
+`.env.template`をコピーして`.env`を作成し、サービスドメインとAPIキーを入れる。
+
 ## 🍡 Fonts Install
 
 フォントのインストールは [Fontsource](https://fontsource.org/)から npm でインストールして使用する。
