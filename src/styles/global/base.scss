@@ -1,0 +1,52 @@
+/*
+  base
+-----------------------------------------------------*/
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--color-text-main);
+  font-family: var(--font-base);
+  font-size: fz(16);
+  background-color: var(--color-bg-white);
+  height: 100%;
+  line-height: 1.5;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+strong {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
