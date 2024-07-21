@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
+    "@astrojs/vue": "^4.5.0",
     "@fontsource-variable/noto-sans-jp": "^5.0.16",
     "astro": "^4.12.2",
     "microcms-js-sdk": "^2.7.0",
     "ress": "^5.0.2",
     "sass": "^1.69.5",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vue": "^3.4.33"
   },
   "devDependencies": {
     "prettier": "^3.0.3",
