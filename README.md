@@ -1,8 +1,15 @@
 # Astro Boilerplate
 
+- microCMS
+- Reset CSS (ress)
+- Sass
+- Vue.js
+- Google Fonts
+- 日時フォーマット（date-fns-tz）
+
 ## 🚀 Setup
 
-> モジュールインストール
+モジュールインストール
 
 ```zsh
 $ npm install
@@ -16,7 +23,7 @@ $ npm install
 
 フォントのインストールは [Fontsource](https://fontsource.org/)から npm でインストールして使用する。
 
-> フォントをインストール
+フォントをインストール
 
 ```bash
 # Noto Sans JP
@@ -26,19 +33,41 @@ $ npm install @fontsource-variable/noto-sans-jp
 $ npm install @fontsource/noto-serif-jp
 ```
 
-> Layout ファイルで import
+Layout ファイルで import
 
 ```jsx
 // Supports weights 100-900
 import "@fontsource-variable/noto-sans-jp";
 ```
 
-> CSS で読み込み
+CSS で読み込み
 
 ```css
 body {
   font-family: "Noto Sans JP Variable", sans-serif;
 }
+```
+
+## ⏰ how to use 'date-fns-tz'
+
+### import
+
+```js
+import { formatInTimeZone } from "date-fns-tz";
+```
+
+### use in Tag
+
+```jsx
+<time
+  datetime={formatInTimeZone(
+    new Date(DATE),
+    "Asia/Tokyo",
+    "yyyy-MM-dd HH:mm:ssXXX",
+  )}
+>
+  {formatInTimeZone(new Date(DATE), "Asia/Tokyo", "yyyy.MM.dd")}
+</time>
 ```
 
 ## 🍖 Files

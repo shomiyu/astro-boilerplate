@@ -4,8 +4,10 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"]
+      "@/components/*": ["src/components/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/library/*": ["src/library/*"],
+      "@/layouts/*": ["src/layouts/*"]
     }
   }
 }
