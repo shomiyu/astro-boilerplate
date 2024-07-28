@@ -1,21 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 
-import {getNews} from '../library/microcms';
-const res = await getNews({fields: ['id', 'title']});
+import { getNews } from "@/library/microcms";
+const res = await getNews({ fields: ["id", "title"] });
 ---
 
-<Layout title="Welcome to Astro." test="これはテストです">
+<Layout isTopPage={true}>
   <main>
     <ul>
-      {res.contents.map((content: any) => (
-        <li>
-          <a href="{content.id}">{content.title}</a>
-        </li>
-      ))}
+      {
+        res.contents.map((content: any) => (
+          <li>
+            <a href="{content.id}">{content.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </main>
 </Layout>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

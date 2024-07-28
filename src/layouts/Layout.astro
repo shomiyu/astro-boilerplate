@@ -1,15 +1,17 @@
 ---
 import "ress";
 import "@fontsource-variable/noto-sans-jp";
-import "../styles/global/base.scss";
-import "../styles/utility/visually-hidden.scss";
-import "../styles/utility/margin.scss";
+import "@/styles/global/base.scss";
+import "@/styles/utility/visually-hidden.scss";
+import "@/styles/utility/margin.scss";
 interface Props {
-  title: string;
-  test: string;
+  isTopPage?: boolean;
+  title?: string;
 }
 
-const { title, test } = Astro.props;
+const { isTopPage, title } = Astro.props;
+const siteName = "";
+const pageTitle = isTopPage ? siteName : title + " | " + siteName;
 ---
 
 <!doctype html>
@@ -17,13 +19,12 @@ const { title, test } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content="Astro description" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <p>{test}</p>
     <slot />
   </body>
 </html>
