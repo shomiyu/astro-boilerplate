@@ -1,0 +1,34 @@
+//============================================
+//  FONT SIZE UTILITY
+//============================================
+
+// 実数値は 16px の例
+// - xs  : 0.75em（12px）
+// - sm  : 0.875em（14px）
+// - md : 1em（16px）
+// - lg  : 1.25em（20px）
+// - xl  : 1.5em（24px）
+// - 2xl  : 2em（32px）
+// --
+// ex. class="u-font" data-size="sp:small"
+//--------------------------------------------
+$sizeLists: (
+  "xs": 0.75,
+  "sm": 0.875,
+  "md": 1,
+  "lg": 1.25,
+  "xl": 1.5,
+  "2xl": 2,
+) !default;
+
+.u-font {
+  @each $device, $breakpoint in $breakpoints {
+    @media screen and (min-width: $breakpoint) {
+      @each $key, $size in $sizeLists {
+        &[data-size~="#{$device}:#{$key}"] {
+          font-size: #{$size}em;
+        }
+      }
+    }
+  }
+}

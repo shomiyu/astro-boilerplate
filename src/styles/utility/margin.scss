@@ -1,3 +1,7 @@
+//============================================
+//  Margin
+//============================================
+
 /**
  * 上下マージン
  * - 4px
@@ -12,50 +16,19 @@
  * - 72px
  * - 80px
  */
-$marginLists: 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80;
+$marginList: 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80;
 
-@each $marginList in $marginLists {
-  .u-mb-sp-#{$marginList} {
-    margin-bottom: #{$marginList}px;
-  }
-
-  .u-mt-sp-#{$marginList} {
-    margin-top: #{$marginList}px;
-  }
-
-  .u-mb-tab-#{$marginList} {
-    @include mq(tab) {
-      margin-bottom: #{$marginList}px;
-    }
-  }
-
-  .u-mt-tab-#{$marginList} {
-    @include mq(tab) {
-      margin-top: #{$marginList}px;
-    }
-  }
-
-  .u-mb-lap-#{$marginList} {
-    @include mq(lap) {
-      margin-bottom: #{$marginList}px;
-    }
-  }
-
-  .u-mt-lap-#{$marginList} {
-    @include mq(lap) {
-      margin-top: #{$marginList}px;
-    }
-  }
-
-  .u-mb-desk-#{$marginList} {
-    @include mq(desk) {
-      margin-bottom: #{$marginList}px;
-    }
-  }
-
-  .u-mt-desk-#{$marginList} {
-    @include mq(desk) {
-      margin-top: #{$marginList}px;
+.u-margin {
+  @each $device, $breakpoint in $breakpoints {
+    @media screen and (min-width: $breakpoint) {
+      @each $margin in $marginList {
+        &[data-margin-top~="#{$device}:#{$margin}"] {
+          margin-top: #{$margin}px;
+        }
+        &[data-margin-bottom~="#{$device}:#{$margin}"] {
+          margin-bottom: #{$margin}px;
+        }
+      }
     }
   }
 }
