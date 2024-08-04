@@ -17,7 +17,31 @@ $ npm install
 
 ## 📚 microCMS との接続
 
+`.env`の設定とmicroCMS側のスキーマ設定が必要。  
+デフォルトでお知らせが取得できるように設定しており、それが不要な場合は`/src/pages/index.astro`で`res`の部分を削除すると`.env`の設定のみで立ち上がる。
+
+### .env設定
+
 `.env.template`をコピーして`.env`を作成し、サービスドメインとAPIキーを入れる。
+
+```
+MICROCMS_SERVICE_DOMAIN=<YOUR_SERVICE>
+MICROCMS_API_KEY=<YOUR_KEY_VALUE>
+```
+
+### microCMS APIスキーマ設定（News）
+
+microCMSのお知らせAPIスキーマは以下を想定。同じように設定すれば立ち上がる。
+
+endpoint: news  
+type: リスト形式
+
+| フィールド ID    | 表示名                                 | 種類           |
+| :------------ | :------------------------------------ | :------------ |
+| title         | タイトル                                | テキストフィールド |
+| date          | 更新日・公開日 (任意の日付を選びたい場合のみ) | 日付           |
+| category      | カテゴリー                              | セレクトフィールド  |
+| contents      | 本文                                  | リッチエディタ    |
 
 ## 🍡 Fonts Install
 
